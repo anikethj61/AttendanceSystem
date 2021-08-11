@@ -1,2 +1,2 @@
 # AttendanceSystem
-Minor Project - Still open and under development 
+Minor Project/SDP - Still open and under development 
