@@ -1,0 +1,2143 @@
+[
+    {
+        "id": "49984093.c10b7",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "b6dcba16.2d0a98",
+        "type": "debug",
+        "z": "49984093.c10b7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "6cf3e23e.83e74c",
+        "type": "mqtt in",
+        "z": "49984093.c10b7",
+        "name": "",
+        "topic": "publish_out/#",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "75ca063c.bc81b8",
+        "x": 170,
+        "y": 120,
+        "wires": [
+            [
+                "1ec81501.907b8b",
+                "ccac44a.ffc6fb8"
+            ]
+        ]
+    },
+    {
+        "id": "e5ff1e7f.ba579",
+        "type": "debug",
+        "z": "49984093.c10b7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 520,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "ddd7a2a9.d85d",
+        "type": "function",
+        "z": "49984093.c10b7",
+        "name": "zap msg_events flow context",
+        "func": "var cfg = undefined ;\nflow.set('msg_events', cfg, 'memoryOnly');\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "49bc18e3.dfb408",
+        "type": "inject",
+        "z": "49984093.c10b7",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "0.1",
+        "topic": "",
+        "payload": "1",
+        "payloadType": "str",
+        "x": 190,
+        "y": 60,
+        "wires": [
+            [
+                "ddd7a2a9.d85d"
+            ]
+        ]
+    },
+    {
+        "id": "acbc0a72.033828",
+        "type": "ui_audio",
+        "z": "49984093.c10b7",
+        "name": "",
+        "group": "d3a5dbad.4d58f8",
+        "voice": "hi-IN",
+        "always": false,
+        "x": 500,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "68bbad1c.0ede94",
+        "type": "ui_toast",
+        "z": "49984093.c10b7",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "orange",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "topic": "",
+        "name": "",
+        "x": 510,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5199db2b.eaa2d4",
+        "type": "ui_toast",
+        "z": "49984093.c10b7",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "orange",
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "",
+        "name": "",
+        "x": 510,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cf6fafec.cc1b",
+        "type": "ui_audio",
+        "z": "49984093.c10b7",
+        "name": "",
+        "group": "54b20be6.6658d4",
+        "voice": "hi-IN",
+        "always": false,
+        "x": 500,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "cb69b6ab.73b088",
+        "type": "debug",
+        "z": "49984093.c10b7",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "250a7842.f3bbe8",
+        "type": "ui_form",
+        "z": "49984093.c10b7",
+        "name": "",
+        "label": "New anchor",
+        "group": "d3a5dbad.4d58f8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "anchor id",
+                "value": "anchor_id",
+                "type": "text",
+                "required": true
+            },
+            {
+                "label": "room name",
+                "value": "room_name",
+                "type": "text",
+                "required": true
+            }
+        ],
+        "formValue": {
+            "anchor_id": "",
+            "room_name": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "",
+        "x": 170,
+        "y": 200,
+        "wires": [
+            [
+                "1f1d0185.fa7f8e"
+            ]
+        ]
+    },
+    {
+        "id": "bdb12ca7.e779b",
+        "type": "ui_form",
+        "z": "49984093.c10b7",
+        "name": "",
+        "label": "New student",
+        "group": "54b20be6.6658d4",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "student name",
+                "value": "st_name",
+                "type": "text",
+                "required": true
+            },
+            {
+                "label": "Sem",
+                "value": "sem",
+                "type": "number",
+                "required": true
+            },
+            {
+                "label": "Division",
+                "value": "division",
+                "type": "text",
+                "required": true
+            },
+            {
+                "label": "USN",
+                "value": "usn",
+                "type": "text",
+                "required": true
+            },
+            {
+                "label": "R.No",
+                "value": "r_no",
+                "type": "number",
+                "required": true
+            },
+            {
+                "label": "Email ID",
+                "value": "e_id",
+                "type": "text",
+                "required": true
+            }
+        ],
+        "formValue": {
+            "st_name": "",
+            "sem": "",
+            "division": "",
+            "usn": "",
+            "r_no": "",
+            "e_id": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "",
+        "x": 170,
+        "y": 320,
+        "wires": [
+            [
+                "2fd60672.6b0a9a"
+            ]
+        ]
+    },
+    {
+        "id": "d3e9ae96.d1825",
+        "type": "function",
+        "z": "49984093.c10b7",
+        "name": "teacher_update",
+        "func": "var teachers = global.get('teach') || [];\nnew_teacher = msg.payload\nfor (var i = 0; i < teachers.length; i++) {\n    if (new_teacher.id === teachers[i].id) {\n        msg.payload = \"Teacher already registered\"\n        return msg\n    }\n}\nteachers.push(new_teacher)\nmsg.payload = \"New teacher registered successfully\"\nglobal.set('teach', teachers)\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 340,
+        "y": 440,
+        "wires": [
+            [
+                "9c07a9e5.2231e8",
+                "584c34c8.3361fc",
+                "a78e57d1.196088"
+            ]
+        ]
+    },
+    {
+        "id": "9c07a9e5.2231e8",
+        "type": "debug",
+        "z": "49984093.c10b7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 520,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "a78e57d1.196088",
+        "type": "ui_toast",
+        "z": "49984093.c10b7",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "orange",
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "",
+        "name": "",
+        "x": 510,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "584c34c8.3361fc",
+        "type": "ui_audio",
+        "z": "49984093.c10b7",
+        "name": "",
+        "group": "11751d2d.b3a8d3",
+        "voice": "hi-IN",
+        "always": false,
+        "x": 500,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "ff408201.05fd4",
+        "type": "ui_form",
+        "z": "49984093.c10b7",
+        "name": "",
+        "label": "New teacher",
+        "group": "11751d2d.b3a8d3",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Teacher name",
+                "value": "st_name",
+                "type": "text",
+                "required": true
+            },
+            {
+                "label": "ID",
+                "value": "id",
+                "type": "text",
+                "required": true
+            }
+        ],
+        "formValue": {
+            "st_name": "",
+            "id": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "",
+        "x": 170,
+        "y": 440,
+        "wires": [
+            [
+                "d3e9ae96.d1825"
+            ]
+        ]
+    },
+    {
+        "id": "22d1230c.98bbbc",
+        "type": "ui_form",
+        "z": "49984093.c10b7",
+        "name": "",
+        "label": "Add class",
+        "group": "91e117a8.ba65e8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Teacher ID",
+                "value": "id",
+                "type": "text",
+                "required": true
+            },
+            {
+                "label": "Sem",
+                "value": "sem",
+                "type": "number",
+                "required": true
+            },
+            {
+                "label": "Division",
+                "value": "div",
+                "type": "text",
+                "required": true
+            },
+            {
+                "label": "Class Room ",
+                "value": "class_room",
+                "type": "text",
+                "required": true
+            },
+            {
+                "label": "Date",
+                "value": "date",
+                "type": "date",
+                "required": true
+            },
+            {
+                "label": "Starts at",
+                "value": "start",
+                "type": "text",
+                "required": true
+            },
+            {
+                "label": "Ends at",
+                "value": "end",
+                "type": "text",
+                "required": true
+            },
+            {
+                "label": "Subject",
+                "value": "sub",
+                "type": "text",
+                "required": true
+            }
+        ],
+        "formValue": {
+            "id": "",
+            "sem": "",
+            "div": "",
+            "class_room": "",
+            "date": "",
+            "start": "",
+            "end": "",
+            "sub": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "session",
+        "x": 160,
+        "y": 560,
+        "wires": [
+            [
+                "e0fd4fba.81ea5"
+            ]
+        ]
+    },
+    {
+        "id": "1f1d0185.fa7f8e",
+        "type": "function",
+        "z": "49984093.c10b7",
+        "name": "anchor_update",
+        "func": "var anchors = global.get('anchors') || [];\nnew_anchor = msg.payload\nfor (var i = 0; i < anchors.length; i++) {\n    if (new_anchor.anchor_id === anchors[i].anchor_id) {\n        msg.payload = \"Anchor already registered\"\n        return msg\n    }\n}\nanchors.push(new_anchor)\nmsg.payload = \"New anchor registered successfully\"\nglobal.set('anchors', anchors)\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 340,
+        "y": 200,
+        "wires": [
+            [
+                "b6dcba16.2d0a98",
+                "68bbad1c.0ede94",
+                "acbc0a72.033828"
+            ]
+        ]
+    },
+    {
+        "id": "e0fd4fba.81ea5",
+        "type": "function",
+        "z": "49984093.c10b7",
+        "name": "session_update",
+        "func": "var sessions = global.get('sessions') || [];\nvar students = global.get('students') || [];\nvar anchors = global.get('anchors') || [];\nvar teachers = global.get('teach') || [];\nvar final_sessions = global.get('final_sessions') || {};\nnew_session = msg.payload\ntoday = new Date();\nvar flag = 0;\nvar flag_1 = 0;\nvar flag_2 = 0;\nvar time = today.getHours() + \":\" + today.getMinutes();\nnew_session.date = new Date(new_session.date)\nnew_session.date = new_session.date.toLocaleDateString()\ntoday = today.toLocaleDateString()\n    //msg.payload=today + new_session.date;\n    //return msg\nfor (var i = 0; i < teachers.length; i++) {\n    if (new_session.id === teachers[i].id) {\n        flag_2 = 1;\n    }\n}\nif (flag_2 === 0) {\n    msg.payload = \"Please enter valid teacher id\"\n    return msg;\n}\nfor (i = 0; i < anchors.length; i++) {\n    if (anchors[i].room_name === new_session.class_room) {\n        flag_1 = 1;\n    }\n}\nif (flag_1 === 0) {\n    msg.payload = \"Please enter valid room name\"\n    return msg;\n}\nif (new Date('1/1/1999 ' + new_session.start) >= new Date('1/1/1999 ' + new_session.end)) {\n    msg.payload = \"Please enter valid timings\"\n    return msg\n}\nif (today > new_session.date) {\n    msg.payload = \"The time stone was reduced to atom by thanos, so you cannot travel to the past\"\n    return msg\n}\nif (today === new_session.date) {\n    if (new Date('1/1/1999 ' + new_session.start) < new Date('1/1/1999 ' + time)) {\n        msg.payload = \"The time stone was reduced to atom by thanos, so you cannot travel to the past\"\n        return msg\n    }\n}\nfor (i = 0; i < sessions.length; i++) {\n\n    if (sessions[i].class_room === new_session.class_room) {\n        if (sessions[i].date === new_session.date) {\n            if (new Date('1/1/1999 ' + sessions[i].start) <= new Date('1/1/1999 ' + new_session.start) && new Date('1/1/1999 ' + sessions[i].end) >= new Date('1/1/1999 ' + new_session.start)) {\n                msg.payload = \"Entered class room is not available for the entered timings\"\n                return msg\n            }\n            if (new Date('1/1/1999 ' + sessions[i].start) >= new Date('1/1/1999 ' + new_session.start) && new Date('1/1/1999 ' + sessions[i].start) <= new Date('1/1/1999 ' + new_session.end)) {\n                msg.payload = \"Entered class room is not available for the entered timings\"\n                return msg\n            }\n        }\n    }\n    if (sessions[i].div === new_session.div && sessions[i].sem === new_session.sem) {\n        if (sessions[i].date === new_session.date) {\n            if (new Date('1/1/1999 ' + sessions[i].start) <= new Date('1/1/1999 ' + new_session.start) && new Date('1/1/1999 ' + sessions[i].end) >= new Date('1/1/1999 ' + new_session.start)) {\n                msg.payload = \"Entered division is not available for the entered timings\"\n                return msg\n            }\n            if (new Date('1/1/1999 ' + sessions[i].start) >= new Date('1/1/1999 ' + new_session.start) && new Date('1/1/1999 ' + sessions[i].start) <= new Date('1/1/1999 ' + new_session.end)) {\n                msg.payload = \"Entered class room is not available for the entered timings\"\n                return msg\n            }\n        }\n    }\n    if (sessions[i].id === new_session.id) {\n        if (sessions[i].date === new_session.date) {\n            if (new Date('1/1/1999 ' + sessions[i].start) <= new Date('1/1/1999 ' + new_session.start) && new Date('1/1/1999 ' + sessions[i].end) >= new Date('1/1/1999 ' + new_session.start)) {\n                msg.payload = \"Entered teacher is not available for the entered timings\"\n                return msg\n            }\n            if (new Date('1/1/1999 ' + sessions[i].start) >= new Date('1/1/1999 ' + new_session.start) && new Date('1/1/1999 ' + sessions[i].start) <= new Date('1/1/1999 ' + new_session.end)) {\n                msg.payload = \"Entered teacher is not available for the entered timings\"\n                return msg\n            }\n        }\n    }\n}\nfor (i = 0; i < students.length; i++) {\n    if (students[i].division === new_session.div && students[i].sem === new_session.sem) {\n        new_session[students[i].usn] = \"Absent\"\n    }\n}\nnew_session[\"student_count\"] = []\nsessions.push(new_session)\nfor (var key in final_sessions) {\n    if (key === new_session.date) {\n        var temp4 = final_sessions[key]\n        temp4.push(new_session)\n        flag = 1;\n    }\n}\nif (flag === 0) {\n    final_sessions[new_session.date] = []\n    var temp21 = final_sessions[new_session.date]\n    temp21.push(new_session)\n}\n\nmsg.payload = final_sessions\n    //msg.payload=\"New session registered successfully\"\nglobal.set('students', students)\nglobal.set('sessions', sessions)\nglobal.set('anchors', anchors)\nglobal.set('teach', teachers)\nglobal.set('final_sessions', final_sessions);\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 320,
+        "y": 560,
+        "wires": [
+            [
+                "d904984d.f04ed8",
+                "fafdeb2c.fd1238",
+                "b5854d19.4386f"
+            ]
+        ]
+    },
+    {
+        "id": "d904984d.f04ed8",
+        "type": "debug",
+        "z": "49984093.c10b7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 520,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "b5854d19.4386f",
+        "type": "ui_toast",
+        "z": "49984093.c10b7",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "orange",
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "",
+        "name": "",
+        "x": 510,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fafdeb2c.fd1238",
+        "type": "ui_audio",
+        "z": "49984093.c10b7",
+        "name": "",
+        "group": "91e117a8.ba65e8",
+        "voice": "en-US",
+        "always": false,
+        "x": 500,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "e1c89f5d.7e753",
+        "type": "ui_form",
+        "z": "49984093.c10b7",
+        "name": "",
+        "label": "Check attendence",
+        "group": "6bd0bfd7.1e19b",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Teacher ID",
+                "value": "id",
+                "type": "text",
+                "required": true
+            },
+            {
+                "label": "Sem",
+                "value": "sem",
+                "type": "number",
+                "required": true
+            },
+            {
+                "label": "Division",
+                "value": "div",
+                "type": "text",
+                "required": true
+            },
+            {
+                "label": "Date",
+                "value": "date",
+                "type": "date",
+                "required": true
+            },
+            {
+                "label": "Subject",
+                "value": "subj",
+                "type": "text",
+                "required": true
+            }
+        ],
+        "formValue": {
+            "id": "",
+            "sem": "",
+            "div": "",
+            "date": "",
+            "subj": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "session",
+        "x": 190,
+        "y": 745.0000352859497,
+        "wires": [
+            [
+                "10eff934.0e5417"
+            ]
+        ]
+    },
+    {
+        "id": "12774813.71ec38",
+        "type": "ui_audio",
+        "z": "49984093.c10b7",
+        "name": "",
+        "group": "6bd0bfd7.1e19b",
+        "voice": "en-US",
+        "always": false,
+        "x": 545.000057220459,
+        "y": 776.0000820159912,
+        "wires": []
+    },
+    {
+        "id": "383e4d97.cb87b2",
+        "type": "ui_template",
+        "z": "49984093.c10b7",
+        "group": "7f070b0a.eeb5d4",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "format": "<table class=\"darkTable\">\n<thead>\n<tr>\n<th>Sem</th>\n<th>Division</th>\n<th>Class Room</th>\n<th>Teacher</th>\n<th>Started at</th>\n<th>Ends at</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>{{msg.payload[0].sem}}</td><td>{{msg.payload[0].div}}</td><td>{{msg.payload[0].class_room}}</td><td>{{msg.payload[0].teacher_name}}</td><td>{{msg.payload[0].start}}</td><td>{{msg.payload[0].end}}</td></tr>\n<tr>\n<td>{{msg.payload[1].sem}}</td><td>{{msg.payload[1].div}}</td><td>{{msg.payload[1].class_room}}</td><td>{{msg.payload[1].teacher_name}}</td><td>{{msg.payload[1].start}}</td><td>{{msg.payload[1].end}}</td></tr>\n<tr>\n<td>{{msg.payload[2].sem}}</td><td>{{msg.payload[2].div}}</td><td>{{payload[2].class_room}}</td><td>{{payload[2].teacher_name}}</td><td>{{payload[2].start}}</td><td>{{payload[2].end}}</td></tr>\n<tr>\n<td>{{msg.payload[3].sem}}</td><td>{{msg.payload[3].div}}</td><td>{{payload[3].class_room}}</td><td>{{payload[3].teacher_name}}</td><td>{{msg.payload[3].start}}</td><td>{{msg.payload[3].end}}</td></tr>\n<tr>\n<td>{{msg.payload[4].sem}}</td><td>{{msg.payload[4].div}}</td><td>{{msg.payload[4].class_room}}</td><td>{{msg.payload[4].teacher_name}}</td><td>{{msg.payload[4].start}}</td><td>{{msg.payload[4].end}}</td></tr>\n<tr>\n<td>{{msg.payload[5].sem}}</td><td>{{msg.payload[5].div}}</td><td>{{msg.payload[5].class_room}}</td><td>{{msg.payload[5].teacher_name}}</td><td>{{msg.payload[5].start}}</td><td>{{msg.payload[5].end}}</td></tr>\n<tr>\n<td>{{msg.payload[6].sem}}</td><td>{{msg.payload[6].div}}</td><td>{{msg.payload[6].class_room}}</td><td>{{msg.payload[6].teacher_name}}</td><td>{{msg.payload[6].start}}</td><td>{{msg.payload[6].end}}</td></tr>\n<tr>\n<td>{{msg.payload[7].sem}}</td><td>{{msg.payload[7].div}}</td><td>{{msg.payload[7].class_room}}</td><td>{{msg.payload[7].teacher_name}}</td><td>{{msg.payload[7].start}}</td><td>{{msg.payload[7].end}}</td></tr>\n<tr>\n<td>{{msg.payload[8].sem}}</td><td>{{msg.payload[8].div}}</td><td>{{msg.payload[8].class_room}}</td><td>{{msg.payload[8].teacher_name}}</td><td>{{msg.payload[8].start}}</td><td>{{msg.payload[8].end}}</td></tr>\n<tr>\n<td>{{msg.payload[9].sem}}</td><td>{{msg.payload[9].div}}</td><td>{{msg.payload[9].class_room}}</td><td>{{msg.payload[9].teacher_name}}</td><td>{{msg.payload[9].start}}</td><td>{{msg.payload[9].end}}</td></tr>\n<tr><td>{{msg.payload[10].sem}}</td><td>{{msg.payload[10].div}}</td><td>{{msg.payload[10].class_room}}</td><td>{{msg.payload[10].teacher_name}}</td><td>{{msg.payload[10].start}}</td><td>{{msg.payload[10].end}}</td></tr>\n<tr><td>{{msg.payload[11].sem}}</td><td>{{msg.payload[11].div}}</td><td>{{msg.payload[11].class_room}}</td><td>{{msg.payload[11].teacher_name}}</td><td>{{msg.payload[11].start}}</td><td>{{msg.payload[11].end}}</td></tr>\n<tr><td>{{msg.payload[12].sem}}</td><td>{{msg.payload[12].div}}</td><td>{{msg.payload[12].class_room}}</td><td>{{msg.payload[12].teacher_name}}</td><td>{{msg.payload[12].start}}</td><td>{{msg.payload[12].end}}</td></tr>\n</tbody>\n</table>\n<style>table.darkTable {\n  font-family: Arial, Helvetica, sans-serif;\n  border: 1px solid #2694DD;\n  background-color: #494949;\n  width: 100%;\n  height: 200px;\n  text-align: center;\n  border-collapse: collapse;\n}\ntable.darkTable td, table.darkTable th {\n  border: 1px solid #353535;\n  padding: 1px 1px;\n}\ntable.darkTable tbody td {\n  font-size: 12px;\n  font-weight: bold;\n  color: #FFFFFF;\n}\ntable.darkTable tr:nth-child(even) {\n  background: #888888;\n}\ntable.darkTable td:nth-child(even) {\n  background: #232121;\n}\ntable.darkTable thead {\n  background: #040714;\n  background: -moz-linear-gradient(top, #43454f 0%, #1d1f2b 66%, #040714 100%);\n  background: -webkit-linear-gradient(top, #43454f 0%, #1d1f2b 66%, #040714 100%);\n  background: linear-gradient(to bottom, #43454f 0%, #1d1f2b 66%, #040714 100%);\n  border-bottom: 3px solid #000000;\n}\ntable.darkTable thead th {\n  font-size: 15px;\n  font-weight: bold;\n  color: #E6E6E6;\n  text-align: center;\n  border-left: 1px solid #4A4A4A;\n}\ntable.darkTable thead th:first-child {\n  border-left: none;\n}\n\ntable.darkTable tfoot {\n  font-size: 12px;\n  font-weight: bold;\n  color: #E6E6E6;\n  background: #000000;\n  background: -moz-linear-gradient(top, #404040 0%, #191919 66%, #000000 100%);\n  background: -webkit-linear-gradient(top, #404040 0%, #191919 66%, #000000 100%);\n  background: linear-gradient(to bottom, #404040 0%, #191919 66%, #000000 100%);\n  border-top: 1px solid #4A4A4A;\n}\ntable.darkTable tfoot td {\n  font-size: 12px;\n}\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 548.0000114440918,
+        "y": 876.0000114440918,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "258ae020.62568",
+        "type": "inject",
+        "z": "49984093.c10b7",
+        "name": "",
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 175,
+        "y": 876.0000114440918,
+        "wires": [
+            [
+                "1ee47a07.82ce36"
+            ]
+        ]
+    },
+    {
+        "id": "1ee47a07.82ce36",
+        "type": "function",
+        "z": "49984093.c10b7",
+        "name": "Ongoing classes",
+        "func": "var final_sessions = global.get('final_sessions') || {};\nvar teachers = global.get('teach') || [];\nvar live = global.get('live') || [];\nlive = []\ntoday = new Date();\nvar time = today.getHours() + \":\" + today.getMinutes();\ntoday = today.toLocaleDateString()\nfor (var key in final_sessions) {\n\n    if (key === today) {\n\n        for (var i = 0; i < final_sessions[key].length; i++) {\n\n            for (var j = 0; j < teachers.length; j++) {\n                if (final_sessions[key][i].id === teachers[j].id) {\n                    final_sessions[key][i][\"teacher_name\"] = teachers[j].st_name\n\n                    if (new Date('1/1/1999 ' + final_sessions[key][i].end) > new Date('1/1/1999 ' + time) && new Date('1/1/1999 ' + final_sessions[key][i].start) <= new Date('1/1/1999 ' + time)) {\n\n                        live.push(final_sessions[key][i])\n                    }\n                }\n            }\n        }\n    }\n}\nmsg.payload = live.slice(0, 10);\nglobal.set('final_sessions', final_sessions);\nglobal.set('teach', teachers)\nglobal.set('live', live)\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 354.00000762939453,
+        "y": 905.0000114440918,
+        "wires": [
+            [
+                "383e4d97.cb87b2",
+                "82b14b74.3ce868"
+            ]
+        ]
+    },
+    {
+        "id": "82b14b74.3ce868",
+        "type": "debug",
+        "z": "49984093.c10b7",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 545.0000152587891,
+        "y": 841.0000095367432,
+        "wires": []
+    },
+    {
+        "id": "b6ea5c55.c75bf",
+        "type": "ui_template",
+        "z": "49984093.c10b7",
+        "group": "4a219ebe.a21e8",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "format": "<table class=\"darkTable\">\n<thead>\n<tr>\n<th>Sem</th>\n<th>Division</th>\n<th>Class Room</th>\n<th>Teacher</th>\n<th>Starts at</th>\n<th>Ends at</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>{{msg.payload[0].sem}}</td><td>{{msg.payload[0].div}}</td><td>{{msg.payload[0].class_room}}</td><td>{{msg.payload[0].teacher_name}}</td><td>{{msg.payload[0].start}}</td><td>{{msg.payload[0].end}}</td></tr>\n<tr>\n<td>{{msg.payload[1].sem}}</td><td>{{msg.payload[1].div}}</td><td>{{msg.payload[1].class_room}}</td><td>{{msg.payload[1].teacher_name}}</td><td>{{msg.payload[1].start}}</td><td>{{msg.payload[1].end}}</td></tr>\n<tr>\n<td>{{msg.payload[2].sem}}</td><td>{{msg.payload[2].div}}</td><td>{{payload[2].class_room}}</td><td>{{payload[2].teacher_name}}</td><td>{{payload[2].start}}</td><td>{{payload[2].end}}</td></tr>\n<tr>\n<td>{{msg.payload[3].sem}}</td><td>{{msg.payload[3].div}}</td><td>{{payload[3].class_room}}</td><td>{{payload[3].teacher_name}}</td><td>{{msg.payload[3].start}}</td><td>{{msg.payload[3].end}}</td></tr>\n<tr>\n<td>{{msg.payload[4].sem}}</td><td>{{msg.payload[4].div}}</td><td>{{msg.payload[4].class_room}}</td><td>{{msg.payload[4].teacher_name}}</td><td>{{msg.payload[4].start}}</td><td>{{msg.payload[4].end}}</td></tr>\n<tr>\n<td>{{msg.payload[5].sem}}</td><td>{{msg.payload[5].div}}</td><td>{{msg.payload[5].class_room}}</td><td>{{msg.payload[5].teacher_name}}</td><td>{{msg.payload[5].start}}</td><td>{{msg.payload[5].end}}</td></tr>\n<tr>\n<td>{{msg.payload[6].sem}}</td><td>{{msg.payload[6].div}}</td><td>{{msg.payload[6].class_room}}</td><td>{{msg.payload[6].teacher_name}}</td><td>{{msg.payload[6].start}}</td><td>{{msg.payload[6].end}}</td></tr>\n<tr>\n<td>{{msg.payload[7].sem}}</td><td>{{msg.payload[7].div}}</td><td>{{msg.payload[7].class_room}}</td><td>{{msg.payload[7].teacher_name}}</td><td>{{msg.payload[7].start}}</td><td>{{msg.payload[7].end}}</td></tr>\n<tr>\n<td>{{msg.payload[8].sem}}</td><td>{{msg.payload[8].div}}</td><td>{{msg.payload[8].class_room}}</td><td>{{msg.payload[8].teacher_name}}</td><td>{{msg.payload[8].start}}</td><td>{{msg.payload[8].end}}</td></tr>\n<tr>\n<td>{{msg.payload[9].sem}}</td><td>{{msg.payload[9].div}}</td><td>{{msg.payload[9].class_room}}</td><td>{{msg.payload[9].teacher_name}}</td><td>{{msg.payload[9].start}}</td><td>{{msg.payload[9].end}}</td></tr>\n<tr><td>{{msg.payload[10].sem}}</td><td>{{msg.payload[10].div}}</td><td>{{msg.payload[10].class_room}}</td><td>{{msg.payload[10].teacher_name}}</td><td>{{msg.payload[10].start}}</td><td>{{msg.payload[10].end}}</td></tr>\n<tr><td>{{msg.payload[11].sem}}</td><td>{{msg.payload[11].div}}</td><td>{{msg.payload[11].class_room}}</td><td>{{msg.payload[11].teacher_name}}</td><td>{{msg.payload[11].start}}</td><td>{{msg.payload[11].end}}</td></tr>\n<tr><td>{{msg.payload[12].sem}}</td><td>{{msg.payload[12].div}}</td><td>{{msg.payload[12].class_room}}</td><td>{{msg.payload[12].teacher_name}}</td><td>{{msg.payload[12].start}}</td><td>{{msg.payload[12].end}}</td></tr>\n</tbody>\n</table>\n<style>table.darkTable {\n  font-family: Arial, Helvetica, sans-serif;\n  border: 1px solid #2694DD;\n  background-color: #494949;\n  width: 100%;\n  height: 200px;\n  text-align: center;\n  border-collapse: collapse;\n}\ntable.darkTable td, table.darkTable th {\n  border: 1px solid #353535;\n  padding: 1px 1px;\n}\ntable.darkTable tbody td {\n  font-size: 12px;\n  font-weight: bold;\n  color: #FFFFFF;\n}\ntable.darkTable tr:nth-child(even) {\n  background: #888888;\n}\ntable.darkTable td:nth-child(even) {\n  background: #232121;\n}\ntable.darkTable thead {\n  background: #040714;\n  background: -moz-linear-gradient(top, #43454f 0%, #1d1f2b 66%, #040714 100%);\n  background: -webkit-linear-gradient(top, #43454f 0%, #1d1f2b 66%, #040714 100%);\n  background: linear-gradient(to bottom, #43454f 0%, #1d1f2b 66%, #040714 100%);\n  border-bottom: 3px solid #000000;\n}\ntable.darkTable thead th {\n  font-size: 15px;\n  font-weight: bold;\n  color: #E6E6E6;\n  text-align: center;\n  border-left: 1px solid #4A4A4A;\n}\ntable.darkTable thead th:first-child {\n  border-left: none;\n}\n\ntable.darkTable tfoot {\n  font-size: 12px;\n  font-weight: bold;\n  color: #E6E6E6;\n  background: #000000;\n  background: -moz-linear-gradient(top, #404040 0%, #191919 66%, #000000 100%);\n  background: -webkit-linear-gradient(top, #404040 0%, #191919 66%, #000000 100%);\n  background: linear-gradient(to bottom, #404040 0%, #191919 66%, #000000 100%);\n  border-top: 1px solid #4A4A4A;\n}\ntable.darkTable tfoot td {\n  font-size: 12px;\n}\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 555.0000114440918,
+        "y": 949.0000133514404,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "45c120e3.ee9a6",
+        "type": "inject",
+        "z": "49984093.c10b7",
+        "name": "",
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 172,
+        "y": 960.0000133514404,
+        "wires": [
+            [
+                "4480a370.12cc0c"
+            ]
+        ]
+    },
+    {
+        "id": "4480a370.12cc0c",
+        "type": "function",
+        "z": "49984093.c10b7",
+        "name": "Upcoming classes",
+        "func": "var final_sessions = global.get('final_sessions') || {};\nvar teachers = global.get('teach') || [];\nvar live_1 = global.get('live_1') || [];\nlive_1 = []\ntoday = new Date();\nvar time = today.getHours() + \":\" + today.getMinutes();\ntoday = today.toLocaleDateString()\nfor (var key in final_sessions) {\n\n    if (key === today) {\n\n        for (var i = 0; i < final_sessions[key].length; i++) {\n\n            for (var j = 0; j < teachers.length; j++) {\n                if (final_sessions[key][i].id === teachers[j].id) {\n                    final_sessions[key][i][\"teacher_name\"] = teachers[j].st_name\n\n                    if (((new Date('1/1/1999 ' + final_sessions[key][i].start) - new Date('1/1/1999 ' + time)) > 0)) {\n                        if (((new Date('1/1/1999 ' + final_sessions[key][i].start) - new Date('1/1/1999 ' + time)) < 3600000)) {\n                            live_1.push(final_sessions[key][i])\n                        }\n                    }\n                }\n            }\n        }\n    }\n}\nmsg.payload = live_1.slice(0, 10);\nglobal.set('final_sessions', final_sessions);\nglobal.set('teach', teachers)\nglobal.set('live_1', live_1)\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 354.00000762939453,
+        "y": 953.0000133514404,
+        "wires": [
+            [
+                "b6ea5c55.c75bf",
+                "d53293a9.10ee9"
+            ]
+        ]
+    },
+    {
+        "id": "d53293a9.10ee9",
+        "type": "debug",
+        "z": "49984093.c10b7",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 550.0000152587891,
+        "y": 909.0000123977661,
+        "wires": []
+    },
+    {
+        "id": "a2a2d666.7eb9b8",
+        "type": "ui_template",
+        "z": "49984093.c10b7",
+        "group": "",
+        "name": "Logo / Clock",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "format": "<script id=\"clockScript1\" type=\"text/javascript\">\n    var clockInterval;\n    $(function () {\n        if (clockInterval) return;\n\n        //add logo\n        var div1 = $('<div/>');\n        var logo = new Image();\n\n        logo.src = 'https://1000logos.net/wp-content/uploads/2018/02/Iron-Man-Logo.png'\n        logo.height = 50;\n        div1[0].style.margin = '15px auto';\n\n        div1.append(logo);\n\n        //add clock\n        var div2 = $('<div/>');\n        var p = $('<p/>');\n\n        div2.append(p);\n        div2[0].style.margin = '10px';\n\n        function displayTime() {\n            today=new Date();\n            var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();\nvar time = today.getHours() + \":\" + today.getMinutes();\nvar dateTime = date+'   '+time;\n            p.text(dateTime);\n        }\n        \n        clockInterval = setInterval(displayTime, 1000);\n\n        //add to toolbar when it's available\n        var addToToolbarTimer;\n        \n        function addToToolbar() {\n            var toolbar = $('.md-toolbar-tools');\n            \n            if(!toolbar.length) return;\n            \n            toolbar.append(div1);\n            toolbar.append(div2);\n            clearInterval(addToToolbarTimer);\n        }\n        addToToolbarTimer = setInterval(addToToolbar, 100);\n    });\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 172,
+        "y": 920.0000123977661,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a083d1ae.86db3",
+        "type": "function",
+        "z": "49984093.c10b7",
+        "name": "",
+        "func": "var students = global.get('students') || [];\nvar anchors = global.get('anchors') || [];\nvar teachers = global.get('teach') || [];\nvar sessions = global.get('sessions') || [];\nvar final_sessions = global.get('final_sessions') || {};\ntoday = new Date()\nvar time = today.getHours() + \":\" + today.getMinutes();\ntoday = today.toLocaleDateString()\nvar a = 0\nvar b = 0\nvar c = 0\nvar i, j, key, c_room;\nif (msg.topic === \"anchor\") {\n    var delete_anchor = msg.payload\n    for (i = 0; i < anchors.length; i++) {\n        if (anchors[i].anchor_id === delete_anchor.anchor_id) {\n            c_room = anchors[i].room_name\n            anchors.splice(i, 1)\n            a = 1;\n        }\n    }\n    if (a === 1) {\n        j = 0;\n        while (j < sessions.length) {\n\n            if (new Date(sessions[j].date) > new Date(today))\n\n            {\n\n                if (sessions[j].class_room == c_room) {\n                    sessions.splice(j, 1);\n                    continue;\n                }\n\n            }\n            j++;\n        }\n\n        if (sessions != []) {\n\n            while (j < sessions.length) {\n                if (new Date(sessions[j].date) === new Date(today)) {\n                    if (new Date('1/1/1999 ' + time) < new Date('1/1/1999 ' + sessions[j].start)) {\n                        if (sessions[j].class_room == c_room) {\n                            sessions.splice(j, 1);\n                            continue;\n                        }\n                    }\n                }\n                j++;\n            }\n        }\n        for (key in final_sessions) {\n            if (new Date(key) > new Date(today)) {\n                while (j < final_sessions[key].length) {\n                    if (final_sessions[key][j].class_room == c_room) {\n\n                        final_sessions[key].splice(j, 1);\n                        continue;\n\n                    }\n                }\n            }\n        }\n\n        if (final_sessions) {\n            for (key in final_sessions) {\n                if (new Date(key) === new Date(today)) {\n                    while (j < final_sessions[key].length) {\n                        if (new Date('1/1/1999 ' + time) < new Date('1/1/1999 ' + final_sessions[key][j].start)) {\n                            if (final_sessions[key][j].class_room == c_room) {\n\n                                final_sessions[key].splice(j, 1);\n                                continue;\n                            }\n                        }\n                    }\n                }\n\n            }\n        }\n    }\n    if (a === 0) {\n        msg.payload = \"No anchor was registered for the entered id\"\n    }\n    if (a === 1) {\n        msg.payload = \"Anchor removed successfully\"\n    }\n}\n\n\n\n\nif (msg.topic === \"student\") {\n\n    var delete_student = msg.payload\n    for (i = 0; i < students.length; i++) {\n        if (students[i].usn == delete_student.usn) {\n            students.splice(i, 1)\n            b = 1;\n        }\n    }\n\n    if (b == 1) {\n        for (j = 0; j < sessions.length; j++) {\n            if (new Date(sessions[j].date) > new Date(today)) {\n                for (key in sessions[j]) {\n                    if (key == delete_student.usn) {\n                        delete sessions[j][key]\n                    }\n                }\n            }\n        }\n        for (j = 0; j < sessions.length; j++) {\n            if (new Date(sessions[j].date) === new Date(today)) {\n                if (new Date('1/1/1999 ' + time) < new Date('1/1/1999 ' + sessions[j].start)) {\n                    for (key in sessions[j]) {\n                        if (key == delete_student.usn) {\n                            delete sessions[j][key]\n                        }\n                    }\n                }\n            }\n        }\n\n        for (key in final_sessions) {\n            if (new Date(key) > new Date(today)) {\n                for (j = 0; j < final_sessions[key].length; j++) {\n                    for (var key1 in final_sessions[key][j]) {\n                        if (key1 == delete_student.usn) {\n                            delete final_sessions[key][j][key1];\n                        }\n                    }\n                }\n            }\n        }\n        for (key in final_sessions) {\n            if (new Date(key) === new Date(today)) {\n                for (j = 0; j < final_sessions[key].length; j++) {\n                    if (new Date('1/1/1999 ' + time) < new Date('1/1/1999 ' + final_sessions[key][j].start)) {\n                        for (var key2 in final_sessions[key][j]) {\n                            if (key2 == delete_student.usn) {\n                                delete final_sessions[key][j][key2];\n                            }\n                        }\n                    }\n                }\n            }\n        }\n        msg.payload = \"Student removed successfully\"\n    }\n\n    if (b === 0) {\n        msg.payload = \"No student was registered for the entered USN\"\n    }\n    if (b === 1) {\n        msg.payload = \"Student removed successfully\"\n    }\n}\n\n\n\n\nif (msg.topic === \"teacher\") {\n    var delete_teacher = msg.payload\n    for (i = 0; i < teachers.length; i++) {\n        if (teachers[i].id === delete_teacher.id) {\n            teachers.splice(i, 1)\n            c = 1;\n        }\n    }\n    if (c == 1) {\n        while (j < sessions.length) {\n            if (new Date(sessions[j].date) > new Date(today)) {\n                if (sessions[j].id == delete_teacher.id) {\n                    sessions.splice(j, 1)\n                    continue;\n                }\n            }\n            j++;\n        }\n        if (sessions) {\n            while (j < sessions.length) {\n                if (new Date(sessions[j].date) === new Date(today)) {\n                    if (new Date('1/1/1999 ' + time) < new Date('1/1/1999 ' + sessions[j].start)) {\n                        if (sessions[j].id == delete_teacher.id) {\n                            sessions.splice(j, 1)\n                            continue\n                        }\n                    }\n                }\n                j++;\n            }\n        }\n\n        for (key in final_sessions) {\n            if (new Date(key) > new Date(today)) {\n                while (j < final_sessions[key].length) {\n                    if (final_sessions[key][j].id == delete_teacher.id) {\n                        final_sessions[key].splice(j, 1);\n                        continue;\n\n                    }\n                    j++;\n                }\n            }\n        }\n        if (final_sessions) {\n\n            for (key in final_sessions) {\n                if (new Date(key) === new Date(today)) {\n                    while (j < final_sessions[key].length) {\n                        if (new Date('1/1/1999 ' + time) < new Date('1/1/1999 ' + final_sessions[key][j].start)) {\n                            if (final_sessions[key][j].id == delete_teacher.id) {\n                                final_sessions[key].splice(j, 1);\n                                continue;\n                            }\n                        }\n                        j++;\n                    }\n                }\n            }\n        }\n    }\n    if (c === 0) {\n        msg.payload = \"No teacher was registered for the entered id\"\n    }\n    if (c === 1) {\n        msg.payload = \"Teacher removed successfully\"\n    }\n}\n\n\nglobal.set('students', students)\nglobal.set('anchors', anchors)\nglobal.set('teach', teachers)\nglobal.set('sessions', sessions)\nglobal.set('final_sessions,final_sessions')\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 365,
+        "y": 1119,
+        "wires": [
+            [
+                "cfc25006.2bba1",
+                "da7537fc.a91198",
+                "c691b3a6.872bb"
+            ]
+        ]
+    },
+    {
+        "id": "92ebc122.02a3e",
+        "type": "ui_form",
+        "z": "49984093.c10b7",
+        "name": "",
+        "label": "Delete Student",
+        "group": "bdcf4f12.15b0f",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Enter the usn of the student to delete",
+                "value": "usn",
+                "type": "text",
+                "required": true
+            }
+        ],
+        "formValue": {
+            "usn": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "student",
+        "x": 190.99999237060547,
+        "y": 1068.000087738037,
+        "wires": [
+            [
+                "a083d1ae.86db3"
+            ]
+        ]
+    },
+    {
+        "id": "26c93e2a.1ba622",
+        "type": "ui_form",
+        "z": "49984093.c10b7",
+        "name": "",
+        "label": "Delete teacher",
+        "group": "a69fbea3.3b89e",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Enter teacher id to delete",
+                "value": "id",
+                "type": "text",
+                "required": true
+            }
+        ],
+        "formValue": {
+            "id": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "teacher",
+        "x": 190.99999237060547,
+        "y": 1110.0000896453857,
+        "wires": [
+            [
+                "a083d1ae.86db3"
+            ]
+        ]
+    },
+    {
+        "id": "ebf6b6bf.bc3098",
+        "type": "ui_form",
+        "z": "49984093.c10b7",
+        "name": "",
+        "label": "Delete anchor",
+        "group": "cdb253ad.f7ace",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Enter anchor id to delete",
+                "value": "anchor_id",
+                "type": "text",
+                "required": true
+            }
+        ],
+        "formValue": {
+            "anchor_id": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "anchor",
+        "x": 196.99999237060547,
+        "y": 1151.0000896453857,
+        "wires": [
+            [
+                "a083d1ae.86db3"
+            ]
+        ]
+    },
+    {
+        "id": "cfc25006.2bba1",
+        "type": "debug",
+        "z": "49984093.c10b7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 544,
+        "y": 1105.0000915527344,
+        "wires": []
+    },
+    {
+        "id": "da7537fc.a91198",
+        "type": "ui_toast",
+        "z": "49984093.c10b7",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "orange",
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "",
+        "name": "",
+        "x": 541.0000038146973,
+        "y": 1068.0000904798508,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c691b3a6.872bb",
+        "type": "ui_audio",
+        "z": "49984093.c10b7",
+        "name": "",
+        "group": "bdcf4f12.15b0f",
+        "voice": "en-US",
+        "always": false,
+        "x": 554,
+        "y": 1139.0000925064087,
+        "wires": []
+    },
+    {
+        "id": "e15ee7fb.937cd8",
+        "type": "function",
+        "z": "49984093.c10b7",
+        "name": "",
+        "func": "var final_sessions = global.get('final_sessions') || {};\nvar students = global.get('students') || [];\nvar temp = global.get('mail_list') || []\ntoday = new Date()\ntoday = today.toLocaleDateString()\nvar mail\nfor (z = 0; z < students.length; z++) {\n\n    current_student = students[z].usn\n\n    mail = \"Dear student please find your today's\" + \"(\" + today + \")\" + \"attendence details below :\\nstudent name:\\t\\t\" + students[z].st_name + \"\\nstudent usn:\\t\\t\" + students[z].usn + \"\\nstudent sem:\\t\\t\" + students[z].sem + \"\\nstudent div:\\t\\t\" + students[z].division + \"\\n\"\n        //msg.payload=mail\n        //  return msg  \n    for (var key in final_sessions) {\n\n        if (key === today) {\n\n            for (var i = 0; i < final_sessions[key].length; i++) {\n\n                for (var su in final_sessions[key][i]) {\n                    if (su === current_student) {\n                        mail = mail + \"\\nSub:\\t\\t\" + final_sessions[key][i].sub + \"\\nTimings:\\t\\t\" + final_sessions[key][i].start + \"\\tto\\t\" + final_sessions[key][i].end + \"\\nAttendence:\\t\\t\" + final_sessions[key][i][su] + \"\\n\\n\\n\\n\"\n\n\n                    }\n                }\n            }\n        }\n    }\n\n\n    const obj = {\n        mail: mail,\n        email: students[z].e_id\n    };\n    temp.push(obj);\n}\n// msg.payload=temp\n\nglobal.set('students', students)\nglobal.set('mail_list', temp)\nglobal.set('final_sessions', final_sessions)\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 345,
+        "y": 1199,
+        "wires": [
+            [
+                "586c57a4.020c18"
+            ]
+        ]
+    },
+    {
+        "id": "689fc89f.387e68",
+        "type": "inject",
+        "z": "49984093.c10b7",
+        "name": "",
+        "repeat": "",
+        "crontab": "42 17 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 222.99999237060547,
+        "y": 1202.9999995231628,
+        "wires": [
+            [
+                "e15ee7fb.937cd8"
+            ]
+        ]
+    },
+    {
+        "id": "586c57a4.020c18",
+        "type": "debug",
+        "z": "49984093.c10b7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 480.00000190734863,
+        "y": 1185.9999995231628,
+        "wires": []
+    },
+    {
+        "id": "37946a0f.984646",
+        "type": "function",
+        "z": "49984093.c10b7",
+        "name": "",
+        "func": "var mail_list=global.get('mail_list')||[]\nvar z=global.get('z')||0\nif(z===mail_list.length)\n{\n    mail_list=[]\n    z=0\n}\nif(z<mail_list.length && mail_list.length!==0) \n{\n    \n    msg={\n        payload: mail_list[z].mail,\n        to: mail_list[z].email\n        \n    }\n/*    msg.payload=mail_list[z].email\n    return msg*/\n    z+=1\n}\n\nglobal.set('mail_list',mail_list)\nglobal.set('z',z)\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 368,
+        "y": 1299.999915599823,
+        "wires": [
+            [
+                "f726fbca.512008"
+            ]
+        ]
+    },
+    {
+        "id": "dfe40160.58327",
+        "type": "inject",
+        "z": "49984093.c10b7",
+        "name": "",
+        "repeat": "1000",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 223.99999237060547,
+        "y": 1297.999915599823,
+        "wires": [
+            [
+                "37946a0f.984646"
+            ]
+        ]
+    },
+    {
+        "id": "5e8c616e.9a6fb",
+        "type": "inject",
+        "z": "49984093.c10b7",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 216.99999618530273,
+        "y": 1243.9999136924744,
+        "wires": [
+            [
+                "e15ee7fb.937cd8"
+            ]
+        ]
+    },
+    {
+        "id": "96a0f22f.fb041",
+        "type": "persist in",
+        "z": "49984093.c10b7",
+        "name": "teachers",
+        "storageNode": "f4bf833f.2ff7a",
+        "x": 515,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "e91b7d71.3587",
+        "type": "persist out",
+        "z": "49984093.c10b7",
+        "name": "teachers",
+        "storageNode": "f4bf833f.2ff7a",
+        "x": 225,
+        "y": 1380,
+        "wires": [
+            [
+                "5c954cd.d0ec2b4"
+            ]
+        ]
+    },
+    {
+        "id": "8023a0f7.90183",
+        "type": "function",
+        "z": "49984093.c10b7",
+        "name": "",
+        "func": "var teachers=global.get('teach')|| [];\nmsg.payload=teachers\nglobal.set('teach',teachers)\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 375,
+        "y": 1340,
+        "wires": [
+            [
+                "96a0f22f.fb041"
+            ]
+        ]
+    },
+    {
+        "id": "e3819f15.8f6ab",
+        "type": "inject",
+        "z": "49984093.c10b7",
+        "name": "",
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 235,
+        "y": 1340,
+        "wires": [
+            [
+                "8023a0f7.90183"
+            ]
+        ]
+    },
+    {
+        "id": "5c954cd.d0ec2b4",
+        "type": "function",
+        "z": "49984093.c10b7",
+        "name": "",
+        "func": "var teachers=global.get('teach')|| [];\nteachers=msg.payload\nglobal.set('teach',teachers)\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 365,
+        "y": 1380,
+        "wires": [
+            [
+                "31a701b0.adcb9e"
+            ]
+        ]
+    },
+    {
+        "id": "31a701b0.adcb9e",
+        "type": "debug",
+        "z": "49984093.c10b7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 535,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "40461ae9.106544",
+        "type": "persist in",
+        "z": "49984093.c10b7",
+        "name": "students",
+        "storageNode": "3e3f020f.275d3e",
+        "x": 515,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "9cb365db.07d988",
+        "type": "persist out",
+        "z": "49984093.c10b7",
+        "name": "students",
+        "storageNode": "3e3f020f.275d3e",
+        "x": 225,
+        "y": 1460,
+        "wires": [
+            [
+                "31409665.a6f17a"
+            ]
+        ]
+    },
+    {
+        "id": "3a2075ce.70a8ca",
+        "type": "function",
+        "z": "49984093.c10b7",
+        "name": "",
+        "func": "var teachers=global.get('students')|| [];\nmsg.payload=teachers\nglobal.set('students',teachers)\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 375,
+        "y": 1420,
+        "wires": [
+            [
+                "40461ae9.106544"
+            ]
+        ]
+    },
+    {
+        "id": "390cfb40.0663d4",
+        "type": "inject",
+        "z": "49984093.c10b7",
+        "name": "",
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 235,
+        "y": 1420,
+        "wires": [
+            [
+                "3a2075ce.70a8ca"
+            ]
+        ]
+    },
+    {
+        "id": "31409665.a6f17a",
+        "type": "function",
+        "z": "49984093.c10b7",
+        "name": "",
+        "func": "var teachers=global.get('students')|| [];\nteachers=msg.payload\nglobal.set('students',teachers)\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 365,
+        "y": 1460,
+        "wires": [
+            [
+                "561306bd.68cc88"
+            ]
+        ]
+    },
+    {
+        "id": "561306bd.68cc88",
+        "type": "debug",
+        "z": "49984093.c10b7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 535,
+        "y": 1460,
+        "wires": []
+    },
+    {
+        "id": "59486c7c.de55c4",
+        "type": "persist in",
+        "z": "49984093.c10b7",
+        "name": "final_sessions",
+        "storageNode": "dbc50e22.b00fa",
+        "x": 535,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "720e9efb.39d86",
+        "type": "persist out",
+        "z": "49984093.c10b7",
+        "name": "final_sessions",
+        "storageNode": "dbc50e22.b00fa",
+        "x": 245,
+        "y": 1540,
+        "wires": [
+            [
+                "40d104f.9529bfc"
+            ]
+        ]
+    },
+    {
+        "id": "39330625.b28f2a",
+        "type": "function",
+        "z": "49984093.c10b7",
+        "name": "",
+        "func": "var teachers=global.get('final_sessions')|| [];\nmsg.payload=teachers\nglobal.set('final_sessions',teachers)\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 375,
+        "y": 1500,
+        "wires": [
+            [
+                "59486c7c.de55c4"
+            ]
+        ]
+    },
+    {
+        "id": "1a729ca3.83d133",
+        "type": "inject",
+        "z": "49984093.c10b7",
+        "name": "",
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 235,
+        "y": 1500,
+        "wires": [
+            [
+                "39330625.b28f2a"
+            ]
+        ]
+    },
+    {
+        "id": "40d104f.9529bfc",
+        "type": "function",
+        "z": "49984093.c10b7",
+        "name": "",
+        "func": "var teachers=global.get('final_sessions')|| [];\nteachers=msg.payload\nglobal.set('final_sessions',teachers)\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 385,
+        "y": 1540,
+        "wires": [
+            [
+                "ea332fe8.af254"
+            ]
+        ]
+    },
+    {
+        "id": "ea332fe8.af254",
+        "type": "debug",
+        "z": "49984093.c10b7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 535,
+        "y": 1540,
+        "wires": []
+    },
+    {
+        "id": "8e0bbac0.ddd8c8",
+        "type": "persist in",
+        "z": "49984093.c10b7",
+        "name": "anchors",
+        "storageNode": "adf08290.68086",
+        "x": 515,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "9b1b0bfe.ac3ec8",
+        "type": "persist out",
+        "z": "49984093.c10b7",
+        "name": "anchors",
+        "storageNode": "adf08290.68086",
+        "x": 225,
+        "y": 1620,
+        "wires": [
+            [
+                "1992d72e.7a0ef9"
+            ]
+        ]
+    },
+    {
+        "id": "210a2069.142dd",
+        "type": "function",
+        "z": "49984093.c10b7",
+        "name": "",
+        "func": "var teachers=global.get('anchors')|| [];\nmsg.payload=teachers\nglobal.set('anchors',teachers)\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 375,
+        "y": 1580,
+        "wires": [
+            [
+                "8e0bbac0.ddd8c8"
+            ]
+        ]
+    },
+    {
+        "id": "ae516028.d1dc1",
+        "type": "inject",
+        "z": "49984093.c10b7",
+        "name": "",
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 235,
+        "y": 1580,
+        "wires": [
+            [
+                "210a2069.142dd"
+            ]
+        ]
+    },
+    {
+        "id": "1992d72e.7a0ef9",
+        "type": "function",
+        "z": "49984093.c10b7",
+        "name": "",
+        "func": "var teachers=global.get('anchors')|| [];\nteachers=msg.payload\nglobal.set('anchors',teachers)\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 365,
+        "y": 1620,
+        "wires": [
+            [
+                "ceee08f2.8cda18"
+            ]
+        ]
+    },
+    {
+        "id": "ceee08f2.8cda18",
+        "type": "debug",
+        "z": "49984093.c10b7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 535,
+        "y": 1620,
+        "wires": []
+    },
+    {
+        "id": "4980553e.b0427c",
+        "type": "persist in",
+        "z": "49984093.c10b7",
+        "name": "sessions",
+        "storageNode": "ec10d134.5ebc9",
+        "x": 515,
+        "y": 1660,
+        "wires": []
+    },
+    {
+        "id": "7f70b02.2a33c5",
+        "type": "persist out",
+        "z": "49984093.c10b7",
+        "name": "sessions",
+        "storageNode": "ec10d134.5ebc9",
+        "x": 225,
+        "y": 1700,
+        "wires": [
+            [
+                "62feb6c1.cba968"
+            ]
+        ]
+    },
+    {
+        "id": "ae63adc0.7b45d",
+        "type": "function",
+        "z": "49984093.c10b7",
+        "name": "",
+        "func": "var teachers=global.get('sessions')|| [];\nmsg.payload=teachers\nglobal.set('sessions',teachers)\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 375,
+        "y": 1660,
+        "wires": [
+            [
+                "4980553e.b0427c"
+            ]
+        ]
+    },
+    {
+        "id": "ac0a4e0b.916e",
+        "type": "inject",
+        "z": "49984093.c10b7",
+        "name": "",
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 235,
+        "y": 1660,
+        "wires": [
+            [
+                "ae63adc0.7b45d"
+            ]
+        ]
+    },
+    {
+        "id": "62feb6c1.cba968",
+        "type": "function",
+        "z": "49984093.c10b7",
+        "name": "",
+        "func": "var teachers=global.get('sessions')|| [];\nteachers=msg.payload\nglobal.set('sessions',teachers)\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 365,
+        "y": 1700,
+        "wires": [
+            [
+                "75e5cb76.acc3e4"
+            ]
+        ]
+    },
+    {
+        "id": "75e5cb76.acc3e4",
+        "type": "debug",
+        "z": "49984093.c10b7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 535,
+        "y": 1700,
+        "wires": []
+    },
+    {
+        "id": "2fd60672.6b0a9a",
+        "type": "function",
+        "z": "49984093.c10b7",
+        "name": "student_update",
+        "func": "var students = global.get('students') || [];\nnew_student = msg.payload\nfor (var i = 0; i < students.length; i++) {\n    if (new_student.usn === students[i].usn) {\n        msg.payload = \"Student already registered\"\n        return msg\n    }\n\n}\n\nnew_student[\"rssi_arr\"] = []\nstudents.push(new_student)\nmsg.payload = \"New student registered successfully\"\nglobal.set('students', students)\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 340,
+        "y": 320,
+        "wires": [
+            [
+                "5199db2b.eaa2d4",
+                "e5ff1e7f.ba579",
+                "cf6fafec.cc1b"
+            ]
+        ]
+    },
+    {
+        "id": "c406013c.a7bc5",
+        "type": "inject",
+        "z": "49984093.c10b7",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 720,
+        "y": 180,
+        "wires": [
+            [
+                "372edad0.163bf6"
+            ]
+        ]
+    },
+    {
+        "id": "948e46ff.27da88",
+        "type": "debug",
+        "z": "49984093.c10b7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1010,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "372edad0.163bf6",
+        "type": "function",
+        "z": "49984093.c10b7",
+        "name": "",
+        "func": "var students=global.get('students')|| [];\nvar student1s=global.get('final_sessions')|| {};\n//students=[]\nmsg.payload=students\n//global.set('sessions',students)\n//global.set('final_sessions',students)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 870,
+        "y": 200,
+        "wires": [
+            [
+                "948e46ff.27da88"
+            ]
+        ]
+    },
+    {
+        "id": "f18feca4.6cb2a",
+        "type": "function",
+        "z": "49984093.c10b7",
+        "name": "",
+        "func": "\nvar final_sessions=global.get('final_sessions')|| {};\nvar sessions=global.get('sessions')|| [];\nvar attendence=global.get('attendence')||{}\nvar teachers=global.get('teachers')|| [];\nvar students=global.get('students')||[]\nvar anchors=global.get('anchors')||[]\nsessions=[];\n//students=[]\n//anchors=[]\nfinal_sessions={};\n//attendence={};\n//teachers=[];\nglobal.set('final_sessions',final_sessions)\nglobal.set('sessions',sessions)\nglobal.set('teachers',teachers)\nglobal.set('students',students)\nglobal.set('anchors',anchors)||[]\n\nglobal.set('attendence',attendence)",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 857,
+        "y": 552.272705078125,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6605fd41.e34a84",
+        "type": "inject",
+        "z": "49984093.c10b7",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 730,
+        "y": 572.272705078125,
+        "wires": [
+            [
+                "f18feca4.6cb2a"
+            ]
+        ]
+    },
+    {
+        "id": "ef65e2f1.f00bb",
+        "type": "ui_template",
+        "z": "49984093.c10b7",
+        "group": "69602851.975648",
+        "name": "",
+        "order": 0,
+        "width": "0",
+        "height": "0",
+        "format": "\n<table class=\"darkTable\">\n \n\n    <thead>\n <tr> \n  <th ng-repeat=\"time_obj in msg.t\">{{time_obj['time']}}</th>\n</tr>\n</thead>\n  <tr ng-repeat=\"status_obj in msg.payload\">\n    <td ng-repeat=\"sub_array in status_obj\">{{sub_array['usn']}}</td>\n\n  </tr>\n</table>\n\n\n<style>table.darkTable {\n  font-family: Arial, Helvetica, sans-serif;\n  border: 1px solid #2694DD;\n  background-color: #494949;\n  width: 100%;\n  height: 200px;\n  text-align: center;\n  border-collapse: collapse;\n}\ntable.darkTable td, table.darkTable th {\n  border: 1px solid #353535;\n  padding: 1px 1px;\n}\ntable.darkTable tbody td {\n  font-size: 12px;\n  font-weight: bold;\n  color: #FFFFFF;\n}\ntable.darkTable tr:nth-child(even) {\n  background: #888888;\n}\ntable.darkTable td:nth-child(even) {\n  background: #232121;\n}\ntable.darkTable thead {\n  background: #040714;\n  background: -moz-linear-gradient(top, #43454f 0%, #1d1f2b 66%, #040714 100%);\n  background: -webkit-linear-gradient(top, #43454f 0%, #1d1f2b 66%, #040714 100%);\n  background: linear-gradient(to bottom, #43454f 0%, #1d1f2b 66%, #040714 100%);\n  border-bottom: 3px solid #000000;\n}\ntable.darkTable thead th {\n  font-size: 15px;\n  font-weight: bold;\n  color: #E6E6E6;\n  text-align: center;\n  border-left: 1px solid #4A4A4A;\n}\ntable.darkTable thead th:first-child {\n  border-left: none;\n}\n\ntable.darkTable tfoot {\n  font-size: 12px;\n  font-weight: bold;\n  color: #E6E6E6;\n  background: #000000;\n  background: -moz-linear-gradient(top, #404040 0%, #191919 66%, #000000 100%);\n  background: -webkit-linear-gradient(top, #404040 0%, #191919 66%, #000000 100%);\n  background: linear-gradient(to bottom, #404040 0%, #191919 66%, #000000 100%);\n  border-top: 1px solid #4A4A4A;\n}\ntable.darkTable tfoot td {\n  font-size: 12px;\n}\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 500.3636474609375,
+        "y": 634.4545860290527,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "10eff934.0e5417",
+        "type": "function",
+        "z": "49984093.c10b7",
+        "name": "",
+        "func": "var sessions = global.get('sessions') || [];\nvar final_sessions = global.get('final_sessions') || {};\nvar students = global.get('students') || []\n\nvar search_session = msg.payload\nvar attendence_status = []\nvar temp_att = {}\nvar obj_keys = []\nvar status_obj = {}\ntimings_arr = []\nvar len_arr = []\ntoday = new Date();\nsearch_session.date = new Date(search_session.date)\nsearch_session.date = search_session.date.toLocaleDateString()\nvar time = today.getHours() + \":\" + today.getMinutes();\ntoday = today.toLocaleDateString()\nvar time_obj = {}\ntime_obj['time'] = \"USN\"\ntimings_arr.push(time_obj)\nif (today < search_session.date) {\n    msg.payload = today + search_session.date\n        //msg.payload=\"Entered session's attendence is not taken yet!\"\n    return msg\n}\nfor (var key in final_sessions) {\n\n    if (key === search_session.date) {\n\n        for (var i = 0; i < final_sessions[key].length; i++) {\n\n            if (final_sessions[key][i].id === search_session.id) {\n\n                if (final_sessions[key][i].sem === search_session.sem) {\n                    if (final_sessions[key][i].div === search_session.div) {\n                        if (final_sessions[key][i].sub === search_session.subj)\n\n\n                        {\n                            if (final_sessions[key][i].end > time) {\n                                msg.payload = \"Entered session's attendence is not taken yet!!!!\"\n\n                            } else {\n                                msg.subject = search_session.subj;\n                                msg.class = search_session.sem + ' ' + 'sem' + '  ' + search_session.div + ' ' + 'div';\n                                time_obj = {}\n\n                                time_obj['time'] = final_sessions[key][i].start + '-' + final_sessions[key][i].end\n                                timings_arr.push(time_obj);\n\n                                for (var obj_key in final_sessions[key][i]) {\n                                    obj_keys.push(obj_key);\n                                }\n\n\n                                for (var j = 0; j < students.length; j++) {\n                                    if (students[j].sem == final_sessions[key][i].sem && students[j].division == final_sessions[key][i].div) {\n\n                                        if (obj_keys.includes(students[j].usn)) {\n\n                                            if (!temp_att[students[j].usn]) {\n\n                                                temp_att[students[j].usn] = []\n                                            }\n                                            var temp_var = students[j].usn\n                                            temp_att[students[j].usn].push(final_sessions[key][i][temp_var])\n\n                                        }\n                                    }\n\n\n                                }\n                            }\n                        }\n                    }\n                }\n            }\n        }\n\n        for (var keyy in temp_att) {\n\n            var sub_array = []\n            status_obj['usn'] = keyy;\n            sub_array.push(status_obj);\n            status_obj = {}\n\n            //return msg\n            for (var el = 0; el < temp_att[keyy].length; el++) {\n\n                status_obj['usn'] = temp_att[keyy][el]\n                sub_array.push(status_obj)\n                status_obj = {}\n            }\n\n            attendence_status.push(sub_array)\n            status_obj = {}\n        }\n\n        msg.payload = attendence_status\n        msg.t = timings_arr //.slice(0,2)\n        return msg\n\n\n\n    }\n}\n\n//msg.payload=\"No sessions were registered for entered details\"\nglobal.set('sessions', sessions)\nglobal.set('students', students)\nglobal.set('final_sessions', final_sessions);\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 340.36366271972656,
+        "y": 746.0000796318054,
+        "wires": [
+            [
+                "746ac118.4cdf6",
+                "ef65e2f1.f00bb",
+                "12774813.71ec38",
+                "ae530b95.fdb0c8",
+                "61cecf78.8d02b",
+                "a898dece.62631"
+            ]
+        ]
+    },
+    {
+        "id": "746ac118.4cdf6",
+        "type": "debug",
+        "z": "49984093.c10b7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 548.3636474609375,
+        "y": 743.6364440917969,
+        "wires": []
+    },
+    {
+        "id": "ae530b95.fdb0c8",
+        "type": "ui_toast",
+        "z": "49984093.c10b7",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "orange",
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "",
+        "name": "",
+        "x": 521.000057220459,
+        "y": 671.2728071212769,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "61cecf78.8d02b",
+        "type": "ui_text",
+        "z": "49984093.c10b7",
+        "group": "69602851.975648",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "BE",
+        "format": "{{msg.class}}",
+        "layout": "row-left",
+        "x": 521.3636531829834,
+        "y": 704.0909881591797,
+        "wires": []
+    },
+    {
+        "id": "a898dece.62631",
+        "type": "ui_text",
+        "z": "49984093.c10b7",
+        "group": "69602851.975648",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Subject :",
+        "format": "{{msg.subject}}",
+        "layout": "row-left",
+        "x": 537.0000114440918,
+        "y": 808.4546284675598,
+        "wires": []
+    },
+    {
+        "id": "3acdf5e7.fc33ba",
+        "type": "ui_form",
+        "z": "49984093.c10b7",
+        "name": "",
+        "label": "cancel class",
+        "group": "eb856d14.4f5b",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Teacher ID",
+                "value": "id",
+                "type": "text",
+                "required": true
+            },
+            {
+                "label": "Sem",
+                "value": "sem",
+                "type": "number",
+                "required": true
+            },
+            {
+                "label": "Division",
+                "value": "div",
+                "type": "text",
+                "required": true
+            },
+            {
+                "label": "Class Room ",
+                "value": "class_room",
+                "type": "text",
+                "required": true
+            },
+            {
+                "label": "Date",
+                "value": "date",
+                "type": "date",
+                "required": true
+            },
+            {
+                "label": "Starts at",
+                "value": "start",
+                "type": "text",
+                "required": true
+            },
+            {
+                "label": "Ends at",
+                "value": "end",
+                "type": "text",
+                "required": true
+            },
+            {
+                "label": "Subject",
+                "value": "sub",
+                "type": "text",
+                "required": true
+            }
+        ],
+        "formValue": {
+            "id": "",
+            "sem": "",
+            "div": "",
+            "class_room": "",
+            "date": "",
+            "start": "",
+            "end": "",
+            "sub": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "session",
+        "x": 205,
+        "y": 1019,
+        "wires": [
+            [
+                "ffdb22db.1ca68"
+            ]
+        ]
+    },
+    {
+        "id": "ffdb22db.1ca68",
+        "type": "function",
+        "z": "49984093.c10b7",
+        "name": "session_update",
+        "func": "var sessions = global.get('sessions') || [];\nvar students = global.get('students') || [];\nvar anchors = global.get('anchors') || [];\nvar teachers = global.get('teach') || [];\nvar final_sessions = global.get('final_sessions') || {};\nnew_session = msg.payload\ntoday = new Date();\nvar flag = 0;\nvar flag_1 = 0;\nvar flag_2 = 0;\nvar time = today.getHours() + \":\" + today.getMinutes();\nnew_session.date = new Date(new_session.date)\nnew_session.date = new_session.date.toLocaleDateString()\ntoday = today.toLocaleDateString()\n    //msg.payload=today + new_session.date;\n    //return msg\nfor (var i = 0; i < teachers.length; i++) {\n    if (new_session.id === teachers[i].id) {\n        flag_2 = 1;\n    }\n}\nif (flag_2 === 0) {\n    msg.payload = \"Please enter valid teacher id\"\n    return msg;\n}\nfor (i = 0; i < anchors.length; i++) {\n    if (anchors[i].room_name === new_session.class_room) {\n        flag_1 = 1;\n    }\n}\nif (flag_1 === 0) {\n    msg.payload = \"Please enter valid room name\"\n    return msg;\n}\nif (new Date('1/1/1999 ' + new_session.start) >= new Date('1/1/1999 ' + new_session.end)) {\n    msg.payload = \"Please enter valid timings\"\n    return msg\n}\nif (today > new_session.date) {\n    msg.payload = \"The time stone was reduced to atom by thanos, so you cannot travel to the past\"\n    return msg\n}\nif (today === new_session.date) {\n    if (new Date('1/1/1999 ' + new_session.start) < new Date('1/1/1999 ' + time)) {\n        msg.payload = \"The time stone was reduced to atom by thanos, so you cannot travel to the past\"\n        return msg\n    }\n}\nfor (var key in final_sessions) {\n\n    if (key >= today) {\n        for (var z = 0; z < final_sessions[key].length; z++) {\n            if (final_sessions[key][z].sem === new_session.sem) {\n\n                if (final_sessions[key][z].div === new_session.div) {\n\n                    if (final_sessions[key][z].class_room === new_session.class_room) {\n\n                        if (new Date('1/1/1999 ' + time) <= new Date('1/1/1999 ' + final_sessions[key][z].start)) {\n                            final_sessions[key].splice(z, 1);\n                            msg.payload = \"Session removed successfully\"\n                        }\n                    }\n                }\n            } else {\n                msg.payload = \"Invalid input\"\n            }\n        }\n    }\n}\nfor (var m = 0; m < sessions.length; m++) {\n    if (sessions[m].date === today) {\n        if (sessions[m].sem === new_session.sem) {\n\n            if (sessions[m].div === new_session.div) {\n\n                if (sessions[m].class_room === new_session.class_room) {\n\n\n                    if (new Date('1/1/1999 ' + time) <= new Date('1/1/1999 ' + sessions[m].start)) {\n                        sessions.splice(m, 1);\n                        msg.payload = \"Session removed successfully\"\n                    }\n                }\n            }\n        }\n    } else {\n        msg.payload = \"Invalid input\"\n    }\n}\n//msg.payload=\"New session registered successfully\"\nglobal.set('students', students)\nglobal.set('sessions', sessions)\nglobal.set('anchors', anchors)\nglobal.set('teach', teachers)\nglobal.set('final_sessions', final_sessions);\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 375,
+        "y": 1019,
+        "wires": [
+            [
+                "38e373fc.b2a96c",
+                "a99b76dd.9ced58",
+                "37048d4d.c27d62"
+            ]
+        ]
+    },
+    {
+        "id": "38e373fc.b2a96c",
+        "type": "debug",
+        "z": "49984093.c10b7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 555,
+        "y": 1019,
+        "wires": []
+    },
+    {
+        "id": "a99b76dd.9ced58",
+        "type": "ui_toast",
+        "z": "49984093.c10b7",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "orange",
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "",
+        "name": "",
+        "x": 565,
+        "y": 979,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "37048d4d.c27d62",
+        "type": "ui_audio",
+        "z": "49984093.c10b7",
+        "name": "",
+        "group": "eb856d14.4f5b",
+        "voice": "en-US",
+        "always": false,
+        "x": 555,
+        "y": 1039,
+        "wires": []
+    },
+    {
+        "id": "1ec81501.907b8b",
+        "type": "debug",
+        "z": "49984093.c10b7",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 330,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "ccac44a.ffc6fb8",
+        "type": "function",
+        "z": "49984093.c10b7",
+        "name": "RSSI_Clustering",
+        "func": "var final_sessions = global.get('final_sessions') || {};\nvar students = global.get('students') || [];\nvar anchors = global.get('anchors') || [];\ntoday = new Date();\nvar time = today.getHours() + \":\" + today.getMinutes();\nvar anchor = msg.payload.slice(19, 31);\nvar student = msg.payload.slice(76, 88);\nvar rssi = msg.payload.slice(32, 35);\nvar count = 0\nvar rssi_arr = []\nvar m = 0\nvar flag = 0\nvar temp = []\nvar keys = []\ntoday = today.toLocaleDateString()\n\nfor (var i = 0; i < anchors.length; i++) {\n    if (anchor === anchors[i].anchor_id) {\n\n        anchor = anchors[i].room_name\n\n    }\n}\nfor (i = 0; i < students.length; i++) {\n\n    for (var key10 in final_sessions) {\n\n        if (key10 === today) {\n            for (var z_1 = 0; z_1 < final_sessions[key10].length; z_1++) {\n                if (final_sessions[key10][z_1].sem === students[i].sem) {\n                    if (final_sessions[key10][z_1].div === students[i].division) {\n\n                        if (final_sessions[key10][z_1].class_room === anchor) {\n                            if (new Date('1/1/1999 ' + time) - new Date('1/1/1999 ' + final_sessions[key10][z_1].start) < 300000 && new Date('1/1/1999 ' + time) - new Date('1/1/1999 ' + final_sessions[key10][z_1].start) > 0) {\n\n                                students[i].rssi_arr = [];\n\n                            } else {\n                                if (students[i].usn === student) {\n                                 \n                                \n                                    students[i].rssi_arr.push(rssi);\n                                }\n                                \n\n                                if (students[i].rssi_arr.length >= 10) {\n                                     \n\n                                    flag = 1\n                                }\n\n                                if (flag === 1) {\n\n                                    var q = students[i].rssi_arr[9];\n                                    \n                                    var d = (-(63) - q) / 20;\n                                    var dis = Math.pow(10, d);\n                                    students[i].rssi_arr = [];\n\n                                    if (dis < 3.5) {\n                                        for (var key in final_sessions) {\n                                            if (key === today) {\n                                                \n                                                for (var z = 0; z < final_sessions[key].length; z++) {\n                                                    if (final_sessions[key][z].sem === students[i].sem) {\n\n                                                        if (final_sessions[key][z].div === students[i].division) {\n\n                                                            if (final_sessions[key][z].class_room === anchor) {\n                                                                \n                                                                if (new Date('1/1/1999 ' + time) > new Date('1/1/1999 ' + final_sessions[key][z].start) && new Date('1/1/1999 ' + time) < new Date('1/1/1999 ' + final_sessions[key][z].end)) {\n                                                                    if (new Date('1/1/1999 ' + time) - new Date('1/1/1999 ' + final_sessions[key][z].start) > 300000 && new Date('1/1/1999 ' + time) - new Date('1/1/1999 ' + final_sessions[key][z].start) < 600000) {\n\n\n\n                                                                        if (!(final_sessions[key][z][\"student_count\"].includes(students[i].usn))) {\n                                                                           \n                                                                            final_sessions[key][z][\"student_count\"].push(students[i].usn)\n                                                                        }\n\n\n\n                                                                    }\n                                                                    if (new Date('1/1/1999 ' + time) - new Date('1/1/1999 ' + final_sessions[key][z].start) > 600000) {\n                                                                        for (var key8 in final_sessions[key][z]) {\n\n                                                                            if (key8 === student) {\n                                                                                if (final_sessions[key][z][\"student_count\"].includes(students[i].usn)) {\n                                                                                    final_sessions[key][z][key8] = \"Present\"\n                                                                                }\n                                                                            }\n                                                                        }\n                                                                    }\n                                                                }\n                                                            }\n                                                        }\n                                                    }\n                                                }\n                                            }\n                                        }\n                                    }\n\n                                }\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    }\n}\nglobal.set('students', students)\nglobal.set('anchors', anchors)\nglobal.set('final_sessions', final_sessions)\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 350,
+        "y": 120,
+        "wires": [
+            [
+                "cb69b6ab.73b088"
+            ]
+        ]
+    },
+    {
+        "id": "f726fbca.512008",
+        "type": "e-mail",
+        "z": "49984093.c10b7",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "",
+        "dname": "",
+        "x": 500,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "75ca063c.bc81b8",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "d3a5dbad.4d58f8",
+        "type": "ui_group",
+        "name": "Enter the details of new anchor",
+        "tab": "de6c1634.e0c8f8",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "54b20be6.6658d4",
+        "type": "ui_group",
+        "name": "Add new student",
+        "tab": "889d317b.6004",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "11751d2d.b3a8d3",
+        "type": "ui_group",
+        "name": "Enter the details of new teacher",
+        "tab": "de41a511.831058",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "91e117a8.ba65e8",
+        "type": "ui_group",
+        "name": "Enter the details  session",
+        "tab": "18417e9e.2341d1",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "6bd0bfd7.1e19b",
+        "type": "ui_group",
+        "name": "Enter the details of session ",
+        "tab": "7d741d77.6bd7d4",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "7f070b0a.eeb5d4",
+        "type": "ui_group",
+        "name": "Ongoing sessions",
+        "tab": "e8666d1a.be127",
+        "order": 1,
+        "disp": true,
+        "width": "25",
+        "collapse": false
+    },
+    {
+        "id": "4a219ebe.a21e8",
+        "type": "ui_group",
+        "name": "Upcoming sessions",
+        "tab": "e8666d1a.be127",
+        "order": 2,
+        "disp": true,
+        "width": "25",
+        "collapse": false
+    },
+    {
+        "id": "bdcf4f12.15b0f",
+        "type": "ui_group",
+        "name": "Delete Student",
+        "tab": "65a1927.89edd6c",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "a69fbea3.3b89e",
+        "type": "ui_group",
+        "name": "Delete teacher",
+        "tab": "65a1927.89edd6c",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "cdb253ad.f7ace",
+        "type": "ui_group",
+        "name": "Delete an anchor",
+        "tab": "65a1927.89edd6c",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "f4bf833f.2ff7a",
+        "type": "persist-store",
+        "filename": "123.json",
+        "interval": "20"
+    },
+    {
+        "id": "3e3f020f.275d3e",
+        "type": "persist-store",
+        "filename": "1234.json",
+        "interval": "20"
+    },
+    {
+        "id": "dbc50e22.b00fa",
+        "type": "persist-store",
+        "filename": "12345.json",
+        "interval": "20"
+    },
+    {
+        "id": "adf08290.68086",
+        "type": "persist-store",
+        "filename": "123456.json",
+        "interval": "20"
+    },
+    {
+        "id": "ec10d134.5ebc9",
+        "type": "persist-store",
+        "filename": "1234567.json",
+        "interval": "20"
+    },
+    {
+        "id": "69602851.975648",
+        "type": "ui_group",
+        "name": "Today's attendence",
+        "tab": "7d741d77.6bd7d4",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "eb856d14.4f5b",
+        "type": "ui_group",
+        "name": "Cancel session",
+        "tab": "5f0dd763.049aa8",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "de6c1634.e0c8f8",
+        "type": "ui_tab",
+        "name": "Register new class room",
+        "icon": "dashboard",
+        "order": 9,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "889d317b.6004",
+        "type": "ui_tab",
+        "name": "Register new student",
+        "icon": "dashboard",
+        "order": 80,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "de41a511.831058",
+        "type": "ui_tab",
+        "name": "Register new staff member",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "18417e9e.2341d1",
+        "type": "ui_tab",
+        "name": "Add a session",
+        "icon": "dashboard",
+        "order": 70,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "7d741d77.6bd7d4",
+        "type": "ui_tab",
+        "name": "Check attendence",
+        "icon": "dashboard",
+        "order": 19,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e8666d1a.be127",
+        "type": "ui_tab",
+        "name": "Live display",
+        "icon": "dashboard",
+        "order": 29,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "65a1927.89edd6c",
+        "type": "ui_tab",
+        "name": "Delete",
+        "icon": "dashboard",
+        "order": 24,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "5f0dd763.049aa8",
+        "type": "ui_tab",
+        "name": "Delete a session",
+        "icon": "dashboard",
+        "order": 66,
+        "disabled": false,
+        "hidden": false
+    }
+]
