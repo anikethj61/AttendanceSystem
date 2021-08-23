@@ -18,3 +18,9 @@ Study Material:
 
 Node-Red Link: https://youtube.com/playlist?list=PLyNBB9VCLmo1hyO-4fIZ08gqFcXBkHy-6
 
+Nodejs: https://nodejs.org/en/
+
+Nodejs tutorial by Mosh: https://youtu.be/TlB_eWDSMt4
+
+Mqtt Tutorial: https://youtu.be/WmKAWOVnwjE
+
