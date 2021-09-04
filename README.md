@@ -27,9 +27,9 @@ Nodejs tutorial by Mosh: https://youtu.be/TlB_eWDSMt4
 
 Mqtt Tutorial: https://youtu.be/WmKAWOVnwjE
 
-Android Studio tutorial: https://youtu.be/kMI2jy-WlGM
-
-Android Studio tutorial 2: https://youtu.be/Ob4vSoWud9k
+Android Studio tutorial: 
+1. https://youtu.be/kMI2jy-WlGM
+2. https://youtu.be/Ob4vSoWud9k
 
 MQTT on android: 
 1. https://youtu.be/yNFTS4nPVNM
