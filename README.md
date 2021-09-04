@@ -27,6 +27,12 @@ Nodejs tutorial by Mosh: https://youtu.be/TlB_eWDSMt4
 
 Mqtt Tutorial: https://youtu.be/WmKAWOVnwjE
 
+Installing MQTT on Windows: http://bytesofgigabytes.com/mqtt/installing-mqtt-broker-on-windows/
+
+Installing MQTT broker on Windows: http://bytesofgigabytes.com/mqtt/installing-mqtt-broker-on-windows/
+
+Android with MQTT: https://medium.com/swlh/android-and-mqtt-a-simple-guide-cb0cbba1931c
+
 Android Studio tutorial: 
 1. https://youtu.be/kMI2jy-WlGM
 2. https://youtu.be/Ob4vSoWud9k
