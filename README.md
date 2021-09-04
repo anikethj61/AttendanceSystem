@@ -14,11 +14,8 @@ Architecture Diagram:
 
 ![alt text](https://github.com/anikethj61/AttendanceSystem/blob/main/architecture%20diagram.png)
 
-Android Application: 
-
-![alt text](https://github.com/anikethj61/AttendanceSystem/blob/main/MyApplication4.rar)
- 
- -- The application is built on Android Studio.
+Android Application: The file MyApplication4.rar is the android app built. 
+ -- The application is built on Android Studio. Import this project onto your andriod studio and you can access it. 
 
 Study Material: 
 
