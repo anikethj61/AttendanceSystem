@@ -14,7 +14,10 @@ Architecture Diagram:
 
 ![alt text](https://github.com/anikethj61/AttendanceSystem/blob/main/architecture%20diagram.png)
 
-Android Application:![alt text](https://github.com/anikethj61/AttendanceSystem/blob/main/MyApplication4.rar)
+Android Application: 
+
+![alt text](https://github.com/anikethj61/AttendanceSystem/blob/main/MyApplication4.rar)
+ 
  -- The application is built on Android Studio.
 
 Study Material: 
