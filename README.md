@@ -40,3 +40,31 @@ Android Studio tutorial:
 MQTT on android: 
 1. https://youtu.be/yNFTS4nPVNM
 2. https://youtu.be/BBLqa2Wh6nQ
+
+
+
+## Updates: 
+Date: 7/12/21
+
+Flow of the complete Project
+![alt text](https://github.com/anikethj61/AttendanceSystem/blob/main/flowwww.png)
+
+Nodered Flow: 
+
+![alt text](https://github.com/anikethj61/AttendanceSystem/blob/main/NodeRedFlow.drawio.png)
+
+Anchor Working: 
+
+![alt text](https://github.com/anikethj61/AttendanceSystem/blob/main/NRFflow(Anchor).drawio.png)
+
+Working: 
+
+
+https://user-images.githubusercontent.com/46967535/145005839-f6276f5f-9916-43c6-95a8-75e63c2a6003.mp4
+
+
+
+
+https://user-images.githubusercontent.com/46967535/145006098-7edbabf7-a6d3-4286-88d0-60735a58f99b.mp4
+
+
