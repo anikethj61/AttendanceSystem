@@ -47,20 +47,23 @@ MQTT on android:
 Date: 7/12/21
 
 Flow of the complete Project
-![alt text](https://github.com/anikethj61/AttendanceSystem/blob/main/flowwww.png)
+
+
+![alt text](https://github.com/anikethj61/AttendanceSystem/blob/main/flowchart.jpg)
 
 Nodered Flow: 
 
-![alt text](https://github.com/anikethj61/AttendanceSystem/blob/main/NodeRedFlow.drawio.png)
+![alt text](https://github.com/anikethj61/AttendanceSystem/blob/main/NodeRedFlow.jpg)
 
 Anchor Working: 
 
-![alt text](https://github.com/anikethj61/AttendanceSystem/blob/main/NRFflow(Anchor).drawio.png)
+![alt text](https://github.com/anikethj61/AttendanceSystem/blob/main/NRFflow(Anchor).jpg)
 
 Working: 
 
 
 https://user-images.githubusercontent.com/46967535/145005839-f6276f5f-9916-43c6-95a8-75e63c2a6003.mp4
+
 
 
 
