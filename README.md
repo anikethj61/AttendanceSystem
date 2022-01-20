@@ -1,5 +1,5 @@
 # AttendanceSystem
-Minor Project/SDP - Still open and under development 
+Minor Project/SDP - Completed - Dec, 2022 
 
 
 Anchor: 
